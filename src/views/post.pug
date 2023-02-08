@@ -1,0 +1,9 @@
+extends layout.pug
+
+block content
+  h1 #{post.title}
+  p By #{post.author} on #{new Date(post.date).toLocaleDateString()}
+  hr
+  p !{post.htmlText}
+  a(href='/') Go back
+  hr

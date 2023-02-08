@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+  h1 The Personal Blog of Basil Labib
+  if posts.length > 0
+    each post in posts
+      h3
+        a(href='/post/' + post._id) #{post.title} - #{new Date(post.date).toLocaleDateString()}
+  else
+    div
+      p No posts yet! Create some
+        a(href="/new")  here!
